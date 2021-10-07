@@ -148,7 +148,7 @@ public class DetectarEstructuras : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo" && TocandoEstructura == false )
+        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo" || other.gameObject.tag=="Animal" && TocandoEstructura == false )
         {
             Patrullar = false;
 
@@ -171,11 +171,19 @@ public class DetectarEstructuras : MonoBehaviour
             TocandoEstructura = false;
         }
 
+        if(other.gameObject.tag=="Animal" && other.GetComponent<VidaAnimales>().VidaAnimal <= 0)
+        {
+            Patrullar = true;
+
+            TocandoEstructura = false;
+
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo")
+        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo" || other.gameObject.tag=="Animal")
         {
 
             Patrullar = true;
@@ -186,7 +194,7 @@ public class DetectarEstructuras : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Estructura" || collision.gameObject.tag == "Amigo")
+        if (collision.gameObject.tag == "Estructura" || collision.gameObject.tag == "Amigo" || collision.gameObject.tag=="Animal")
         {
             TocandoEstructura = true;
         }

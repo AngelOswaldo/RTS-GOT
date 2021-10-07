@@ -129,5 +129,5 @@ MonoBehaviour:
   RB: {fileID: 3381794141219555219}
   DamageForEstructuras: 5
   DamageForGuerreros: 5
+  DamageForAnimals: 2
   TiempoAdestruir: 2
-  Identificativo: Tirador

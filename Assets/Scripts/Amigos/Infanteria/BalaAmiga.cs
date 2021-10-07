@@ -13,6 +13,8 @@ public class BalaAmiga : MonoBehaviour
 
     public int DamageForGuerreros;
 
+    public int DamageForAnimals;
+
     public float TiempoAdestruir;
 
 
@@ -40,6 +42,14 @@ public class BalaAmiga : MonoBehaviour
         {
             other.GetComponent<Vida>().VidaPersonaje = other.GetComponent<Vida>().VidaPersonaje + other.GetComponent<Vida>().Armadura - DamageForGuerreros;
             Destroy(this.gameObject);
+        }
+
+        if (other.gameObject.tag == "Animal")
+        {
+            other.GetComponent<VidaAnimales>().VidaAnimal = other.GetComponent<VidaAnimales>().VidaAnimal - DamageForAnimals;
+
+            Destroy(this.gameObject);
+
         }
 
     }

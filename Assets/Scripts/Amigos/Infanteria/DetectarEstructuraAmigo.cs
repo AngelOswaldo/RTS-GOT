@@ -150,13 +150,14 @@ public class DetectarEstructuraAmigo : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Soldado" && TocandoEstructura == false)
+        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Soldado" || other.gameObject.tag=="Animal" && TocandoEstructura == false)
         {
             Patrullar = false;
 
             transform.LookAt(other.gameObject.transform);
 
             EnemyRB.velocity = transform.forward * Speed;
+
         }
 
         if (other.gameObject.tag == "Estructura" && other.GetComponent<VidaEstructuras>().VidaTorres <= 0)
@@ -174,12 +175,19 @@ public class DetectarEstructuraAmigo : MonoBehaviour
 
         }
 
+        if(other.gameObject.tag=="Animal" && other.GetComponent<VidaAnimales>().VidaAnimal <= 0)
+        {
+            TocandoEstructura = false;
+
+            Patrullar = true;
+        }
+
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag=="Estructura" || other.gameObject.tag == "Soldado")
+        if(other.gameObject.tag=="Estructura" || other.gameObject.tag == "Soldado" || other.gameObject.tag=="Animal")
         {
             TocandoEstructura = false;
 
@@ -190,7 +198,7 @@ public class DetectarEstructuraAmigo : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Estructura" || collision.gameObject.tag == "Soldado")
+        if (collision.gameObject.tag == "Estructura" || collision.gameObject.tag == "Soldado" || collision.gameObject.tag=="Animal" )
         {
             TocandoEstructura = true;
         }

@@ -166,6 +166,16 @@ public class DetectarTorresTiradores : MonoBehaviour
             EnemyRB.velocity = transform.forward * speed;
         }
 
+        else if (other.gameObject.tag == "Animal" && ListoParaDisparar==false)
+        {
+
+            Patrullar = false;
+
+            transform.LookAt(other.transform.position);
+
+            EnemyRB.velocity = transform.forward * speed;
+        }
+
         if(other.gameObject.tag=="Estructura" && other.GetComponent<VidaEstructuras>().VidaTorres <= 0)
         {
 
@@ -181,11 +191,18 @@ public class DetectarTorresTiradores : MonoBehaviour
             ListoParaDisparar = false;
         }
 
+        if(other.gameObject.tag=="Animal" && other.GetComponent<VidaAnimales>().VidaAnimal <= 0)
+        {
+            Patrullar = true;
+
+            ListoParaDisparar = false;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo")
+        if (other.gameObject.tag == "Estructura" || other.gameObject.tag == "Amigo" || other.gameObject.tag=="Animal")
         {
             Patrullar = true;
 
