@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8213321910213754375}
   - component: {fileID: 8213321910213754376}
   - component: {fileID: 8213321910213754381}
+  - component: {fileID: 3536302281050505806}
   m_Layer: 0
   m_Name: pruebaSeleccion
   m_TagString: Untagged
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.3748498, y: 1, z: 3.6798341}
+  m_Center: {x: -0.010668755, y: 0, z: -0.14877284}
 --- !u!54 &8213321910213754375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,3 +150,17 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3536302281050505806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213321910213754374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecafc38db1af2e47a5c40d6d85c61a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 6798411815674518593, guid: 3cb2f2788845db644a8b278a9aaa4948, type: 3}
+  tiempoDisparo: 1

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Seleccion : MonoBehaviour
+public class MovYSeleccion : MonoBehaviour
 {
     private NavMeshAgent player;
 
@@ -21,10 +21,8 @@ public class Seleccion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
 
-        if (Input.GetMouseButton(1) && GameManager.seleccionGlobal==true && seleccion==true) {
+        if (Input.GetMouseButton(1) && seleccion==true) {
 
             RaycastHit hit;
 
@@ -35,13 +33,11 @@ public class Seleccion : MonoBehaviour
             }
         }
 
-        //if (Input.GetMouseButton(1)) seleccion = false;
-
     }
 
     private void OnMouseDown()
     {
-        GameManager.seleccionGlobal = true;
+        
         if (seleccion == false) seleccion = true;
         else seleccion = false;
         

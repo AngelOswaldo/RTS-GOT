@@ -174,7 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VidaPersonaje: 30
   Armadura: 2
-  TipoSoldado: Amigo
 --- !u!114 &3467054843785512969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +191,5 @@ MonoBehaviour:
   EnemyRB: {fileID: 7155324149305167317}
   Delay: 2
   Bola: {fileID: 3086067055264479708, guid: ec890c13b941bb941b119a5399e14506, type: 3}
+  Patrullar: 1
+  DelayGiroPatrulla: 0

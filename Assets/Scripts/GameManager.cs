@@ -5,27 +5,41 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
 
-public class GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class GameManager : MonoBehaviour
 {
-    public static bool seleccionGlobal;
+
+    //cantidad maxima de aldeanos
+    int maxAldeanos=10;
+    //cantidad actual de aldeanos
+    public static int cantAldeanos=0;
+
+    //valores o cantidad de recursos que se tiene
+    public static int vMadera;
+    public static int vPiedra;
+    public static int vComida;
+
+
+    //texto para mostrar los valores o cantidades de recursos que se tiene
+    [SerializeField]
+    Text madera;
+    [SerializeField]
+    Text piedra;
+    [SerializeField]
+    Text comida;
+
+    //texto para mostrar la cantidad de aldeanos y su maximo
+    [SerializeField]
+    Text aldeanos;
     
+    //lista de npc
     public static List<GameObject> npcControlados;
 
-    [SerializeField]
-    private Image selectionBoxImage;
-
-    public static Rect selectionBoxRect;
-
-    private Vector2 selectionStartPos;
-
-    public delegate void SelectionAction();
-    public static event SelectionAction OnBoxSelection;
 
 
     // Start is called before the first frame update
     void Start()
     { 
-        seleccionGlobal = false;
+
     }
 
     // Update is called once per frame
@@ -34,50 +48,17 @@ public class GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         npcControlados = new List<GameObject>();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        selectionBoxImage.gameObject.SetActive(true);
-        selectionBoxRect = new Rect();
-        selectionStartPos = eventData.position;
+    void Update() {
+
+        //se muestra la cantidad de recursos y aldeanos en todo momento
+        madera.text = "Madera: " + vMadera;
+        piedra.text = "Piedra: " + vPiedra;
+        comida.text = "Comida: " + vComida;
+        aldeanos.text = "Aldeanos: " + cantAldeanos + "/" + maxAldeanos;
+
+    
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (eventData.position.x < selectionStartPos.x)
-        {
 
-            selectionBoxRect.xMin = eventData.position.x;
-            selectionBoxRect.xMax = selectionStartPos.x;
-
-        }
-        else {
-
-            selectionBoxRect.xMin = selectionStartPos.x;
-            selectionBoxRect.xMax = eventData.position.x;
-
-        }
-
-        if (eventData.position.y < selectionStartPos.y)
-        {
-
-            selectionBoxRect.yMin = eventData.position.y;
-            selectionBoxRect.yMax = selectionStartPos.y;
-
-        }
-        else
-        {
-
-            selectionBoxRect.yMin = selectionStartPos.y;
-            selectionBoxRect.yMax = eventData.position.y;
-
-        }
-
-        selectionBoxImage.rectTransform.offsetMin = selectionBoxRect.min;
-        selectionBoxImage.rectTransform.offsetMax = selectionBoxRect.max;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        throw new NotImplementedException();
-    }
+    
 }
