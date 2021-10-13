@@ -6,7 +6,6 @@ public class ColocarEdificios : MonoBehaviour
 {
 
     RaycastHit hit;
-    Vector3 movePoint;
     public GameObject prefab;
     // Start is called before the first frame update
     void Start()
@@ -29,9 +28,9 @@ public class ColocarEdificios : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && GameManager.vOro>=100)
         {
-
+            GameManager.vOro -= GameManager.vPrecioAldeanos;
             GameObject npc = Instantiate(prefab, transform.position, transform.rotation);
             GameManager.npcControlados.Add(npc);
             Destroy(gameObject);

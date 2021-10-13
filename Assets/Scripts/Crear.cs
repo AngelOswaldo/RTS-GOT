@@ -20,7 +20,7 @@ public class Crear : MonoBehaviour
 
     public void CrearNpc() {
 
-        Instantiate(prefab, new Vector3(Random.Range(-20,20),0.5f, Random.Range(-15, 15)), transform.rotation);
+        Instantiate(prefab);
         
 
     }

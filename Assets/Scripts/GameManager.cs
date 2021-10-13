@@ -7,19 +7,26 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-
+    //costo modificable de crear aldeanos
+    [SerializeField]
+    int precioAldeanos;
+    //costo real para crear los aldeanos
+    public static int vPrecioAldeanos;
     //cantidad maxima de aldeanos
-    int maxAldeanos=10;
+    int maxAldeanos = 10;
     //cantidad actual de aldeanos
-    public static int cantAldeanos=0;
+    public static int cantAldeanos = 0;
 
     //valores o cantidad de recursos que se tiene
+    public static int vOro;
     public static int vMadera;
     public static int vPiedra;
     public static int vComida;
 
 
     //texto para mostrar los valores o cantidades de recursos que se tiene
+    [SerializeField]
+    Text oro;
     [SerializeField]
     Text madera;
     [SerializeField]
@@ -38,8 +45,9 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-
+    {
+        vOro = 500;
+        vPrecioAldeanos = precioAldeanos;
     }
 
     // Update is called once per frame
@@ -51,6 +59,7 @@ public class GameManager : MonoBehaviour
     void Update() {
 
         //se muestra la cantidad de recursos y aldeanos en todo momento
+        oro.text = "Oro: " + vOro;
         madera.text = "Madera: " + vMadera;
         piedra.text = "Piedra: " + vPiedra;
         comida.text = "Comida: " + vComida;
