@@ -27,7 +27,7 @@ public class Animal : MonoBehaviour
 
         if (other.tag == "Bala") {
 
-            vida-=other.GetComponent<Bala>().daño;
+            vida-=other.GetComponent<Bala>().damage;
 
         }
     
