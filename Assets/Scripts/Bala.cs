@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
     //daño de la bala
-    public int daño;
+    public int damage;
     //velocidad de la bala
     public float speed;
 
