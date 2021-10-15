@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     //costo real para crear los aldeanos
     public static int vPrecioAldeanos;
     //cantidad maxima de aldeanos
-    int maxAldeanos = 10;
+    public int maxAldeanos = 10;
     //cantidad actual de aldeanos
     public static int cantAldeanos = 0;
 
@@ -46,7 +46,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vOro = 500;
+        vOro = 200;
+        vMadera = 200;
+        vPiedra = 200;
+        vComida = 200;
         vPrecioAldeanos = precioAldeanos;
     }
 
