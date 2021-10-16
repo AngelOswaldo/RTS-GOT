@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     //costo modificable de crear aldeanos
     [SerializeField]
     int precioAldeanos;
+
     //costo real para crear los aldeanos
     public static int vPrecioAldeanos;
     //cantidad maxima de aldeanos
