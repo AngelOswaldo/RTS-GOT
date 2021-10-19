@@ -20,7 +20,7 @@ public class Crear : MonoBehaviour
 
     public void CrearNpc() {
 
-        if (GameManager.vOro >= 100)
+        if (GameManager.vComida >= 100)
             Instantiate(prefab);
         else Debug.Log("Falta de comida");
         
