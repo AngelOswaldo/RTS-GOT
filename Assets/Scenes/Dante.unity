@@ -1318,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa4ada2fffa1734b841f08d93ddaf7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipoAnimal: 
   vida: 10
   comidaObtenida: 100
 --- !u!65 &1207571765
@@ -2357,9 +2358,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 91.12
       objectReference: {fileID: 0}
+    - target: {fileID: 2527181375040821791, guid: 724cbac2aef699f40907116cc8f2febc, type: 3}
+      propertyPath: tipoAnimal
+      value: hostil
+      objectReference: {fileID: 0}
     - target: {fileID: 3341563238017060869, guid: 724cbac2aef699f40907116cc8f2febc, type: 3}
       propertyPath: m_Name
       value: animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768830964353622526, guid: 724cbac2aef699f40907116cc8f2febc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 724cbac2aef699f40907116cc8f2febc, type: 3}

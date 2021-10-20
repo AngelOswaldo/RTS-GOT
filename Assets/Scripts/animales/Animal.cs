@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
+
+    [StringInList("hostil","no hostil")]   
+    public string tipoAnimal;
+
+
     [SerializeField]
     int vida;
     [SerializeField]
@@ -11,12 +16,13 @@ public class Animal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(tipoAnimal);
         if (vida <= 0) {
             GameManager.vComida += comidaObtenida;
             Destroy(gameObject);
@@ -28,7 +34,7 @@ public class Animal : MonoBehaviour
         if (other.tag == "Bala") {
 
             vida-=other.GetComponent<Bala>().damage;
-
+            Destroy(other);
         }
     
     }
