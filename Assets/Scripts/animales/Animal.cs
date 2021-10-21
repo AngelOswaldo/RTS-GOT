@@ -5,14 +5,12 @@ using UnityEngine;
 public class Animal : MonoBehaviour
 {
 
-    [StringInList("hostil","no hostil")]   
-    public string tipoAnimal;
 
-
-    [SerializeField]
-    int vida;
-    [SerializeField]
-    int comidaObtenida;
+    
+    //en este script solo se detectara la colision con las balas, se colocara la vida del animal y la comida que podrá otorgar
+    
+    public int vida;
+    public int comidaObtenida;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +20,7 @@ public class Animal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(tipoAnimal);
-        if (vida <= 0) {
-            GameManager.vComida += comidaObtenida;
-            Destroy(gameObject);
-        } 
+        
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -34,8 +28,10 @@ public class Animal : MonoBehaviour
         if (other.tag == "Bala") {
 
             vida-=other.GetComponent<Bala>().damage;
-            Destroy(other);
+            
         }
-    
+
     }
+
+
 }
