@@ -1285,7 +1285,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840763c29faab234f888a6bff5098ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  _minimapCamera: {fileID: 963194227}
+  _speed: 20
+  _borderSize: 0
+  _borderLimit: {x: 20, y: 20}
+  _scrollSpeed: 20
+  _minHeight: 0
+  _maxHeight: 20
 --- !u!4 &1119766842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1924917562334133536, guid: 724cbac2aef699f40907116cc8f2febc, type: 3}
