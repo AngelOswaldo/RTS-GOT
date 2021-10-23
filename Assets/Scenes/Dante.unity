@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000009536743
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1562,7 +1562,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840763c29faab234f888a6bff5098ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  _minimapCamera: {fileID: 963194227}
+  _speed: 20
+  _borderSize: 0
+  _borderLimit: {x: 20, y: 20}
+  _scrollSpeed: 15
+  _minHeight: 0
+  _maxHeight: 20
 --- !u!1 &1092378000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1048028720104268, guid: 3ab164258b5613d4caa3f570831d4ca7, type: 3}
