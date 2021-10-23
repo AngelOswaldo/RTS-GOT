@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: abed8dad2de0bad43bc6c0d1f27ecfda, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: abed8dad2de0bad43bc6c0d1f27ecfda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -870,6 +870,67 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Madera: 0'
+--- !u!1001 &614393453
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5815991
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.81347555
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -108.874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 219353691012231027, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3426fb7a229f4364ab4e9780fa7f627, type: 2}
+    - target: {fileID: 919132149155446097, guid: 654809846acdb41e19246df1536d672b, type: 3}
+      propertyPath: m_Name
+      value: Edificio 1 Bastion de Tormentas bake
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 654809846acdb41e19246df1536d672b, type: 3}
 --- !u!1 &686668897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,103 +1691,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230489124}
   m_CullTransparentMesh: 1
---- !u!1001 &1325168244
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.16
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.96
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.42983052
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9029096
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -129.086
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.27
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.94
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.24
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.602859
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6028591
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.36954165
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.36954156
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -7306470688182833783, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -63.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 219353691012231027, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_Materials.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: a8cfc049649fb624b9c20539ae8df8af, type: 2}
-    - target: {fileID: 919132149155446097, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
-      propertyPath: m_Name
-      value: Bastion de Tormentas Bake CON GROSOR PISO
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e792a1bfe16a72e4ba307e16844565bb, type: 3}
 --- !u!1 &1330733257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ea93d329976242840a406b09c270de51, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea93d329976242840a406b09c270de51, type: 3}
       propertyPath: m_LocalScale.x
@@ -2375,7 +2339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8213321910213754380, guid: 1b64efaaf20c861418442af364f44bd7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8213321910213754380, guid: 1b64efaaf20c861418442af364f44bd7, type: 3}
       propertyPath: m_LocalPosition.x
