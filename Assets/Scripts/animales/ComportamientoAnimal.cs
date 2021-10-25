@@ -13,15 +13,19 @@ public class ComportamientoAnimal : MonoBehaviour
     [SerializeField]
     float speed;
 
+    
     //indicador de si esta huyendo o no
-    bool estadoHuir;
+    [HideInInspector]
+    public bool estadoHuir;
+
+    Animator anim;
 
     //variable en donde se guardara una direccion
     Vector3 direccion;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,15 +34,18 @@ public class ComportamientoAnimal : MonoBehaviour
         //si el estado de huir es verdadero, entonces el objeto irá hacia la direccion obtenida
         if (estadoHuir == true) {
 
-            transform.position = new Vector3(transform.position.x + direccion.x * speed * Time.deltaTime, 0.35f, transform.position.z + direccion.z * speed * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x + direccion.x * speed * Time.deltaTime, 0f, transform.position.z + direccion.z * speed * Time.deltaTime);
+            anim.SetInteger("estado", 1);
 
         }
 
         //si se detecta que la vida es menos o igual a 0 entonces la comida aumentara y el objeto(el animal) sera eliminado
         if (transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0) {
-
+            speed = 0;
             GameManager.vComida += transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida;
-            Destroy(gameObject);
+            anim.SetInteger("estado", 2);          
+            Destroy(gameObject,3);
+            
 
         }
         
@@ -60,5 +67,6 @@ public class ComportamientoAnimal : MonoBehaviour
     {
         //si no hay nadie en la zona del animal entonces dejara de huir
         estadoHuir=false;
+        anim.SetInteger("estado", 0);
     }
 }

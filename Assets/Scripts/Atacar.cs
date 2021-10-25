@@ -42,8 +42,8 @@ public class Atacar : MonoBehaviour
         //se obtiene la posicion del objetivo
         objetivo = other.transform;
 
-        if (disparo == true) {
-
+        if (disparo == true && other.tag=="Animal") {
+            Debug.Log("choque");
             StartCoroutine("TiempoDisparo");
 
         }
