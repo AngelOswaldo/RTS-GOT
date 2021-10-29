@@ -40,9 +40,10 @@ public class Atacar : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         //se obtiene la posicion del objetivo
-        objetivo = other.transform;
+        
 
         if (disparo == true && other.tag=="Animal") {
+            objetivo = other.transform;
             Debug.Log("choque");
             StartCoroutine("TiempoDisparo");
 
@@ -55,7 +56,8 @@ public class Atacar : MonoBehaviour
     IEnumerator TiempoDisparo()
     {
         disparo = false;
-        GameObject bala = Instantiate(balaPrefab, transform.position, transform.rotation);
+        
+        GameObject bala = Instantiate(balaPrefab, transform.position, objetivo.transform.rotation);
 
         Vector3 direccion = (objetivo.position - bala.transform.position).normalized;
 

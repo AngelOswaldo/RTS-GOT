@@ -5,17 +5,20 @@ using UnityEngine.AI;
 
 public class MovYSeleccion : MonoBehaviour
 {
-    private NavMeshAgent player;
+    private NavMeshAgent nav;
 
     [HideInInspector]
     public bool seleccion;
 
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         seleccion = false;
-        player = GetComponent<NavMeshAgent>();
+        nav = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -28,11 +31,13 @@ public class MovYSeleccion : MonoBehaviour
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
 
-                player.destination = hit.point;
+                anim.SetInteger("estado", 1);
+                nav.destination = hit.point;
 
             }
         }
-
+        if(nav.velocity.magnitude==0) anim.SetInteger("estado", 0);
+        Debug.Log(nav.velocity.magnitude);
     }
 
     private void OnMouseDown()
