@@ -57,6 +57,7 @@ public class ComportamientoAnimal : MonoBehaviour
         if (transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0) {
             speed = 0;
             GameManager.vComida += transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida;
+            transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida = 0;
             anim.SetInteger("estado", 2);          
             Destroy(gameObject,3);
             

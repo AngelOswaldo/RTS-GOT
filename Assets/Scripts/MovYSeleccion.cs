@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class MovYSeleccion : MonoBehaviour
 {
-    private NavMeshAgent nav;
+    [HideInInspector]
+    public NavMeshAgent nav;
 
     [HideInInspector]
     public bool seleccion;
 
-    Animator anim;
+    [HideInInspector]
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +38,12 @@ public class MovYSeleccion : MonoBehaviour
 
             }
         }
-        if(nav.velocity.magnitude==0) anim.SetInteger("estado", 0);
-        Debug.Log(nav.velocity.magnitude);
+
+        
+
+        if(nav.velocity.magnitude==0 && gameObject.GetComponent<Atacar>().estado!="ataque") anim.SetInteger("estado", 0);
+
+     
     }
 
     private void OnMouseDown()
@@ -46,8 +52,6 @@ public class MovYSeleccion : MonoBehaviour
         if (seleccion == false) seleccion = true;
         else seleccion = false;
         
-
-        Debug.Log("seleccionado");
     }
 
     

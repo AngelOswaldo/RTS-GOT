@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd4b14dc6b6c1a449b954a44d1e66286, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.272114
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd4b14dc6b6c1a449b954a44d1e66286, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   _borderSize: 0
   _borderLimit: {x: 40, y: 40}
   _scrollSpeed: 15
-  _minHeight: 15
+  _minHeight: 10
   _maxHeight: 20
 --- !u!1 &1063904477 stripped
 GameObject:
@@ -1743,7 +1743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balaPrefab: {fileID: 1807840794965049950, guid: eb49d3b087505d74292cda74d44eb23a, type: 3}
-  tiempoDisparo: 2
+  tiempoDisparo: 1
+  estado: 
 --- !u!114 &1063904480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b3d8fcc1d20174b9d07e59df5ef8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nav: {fileID: 0}
   seleccion: 0
+  anim: {fileID: 0}
 --- !u!54 &1063904481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2754,6 +2757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 27466208, guid: 899613ec6c63bd04ab778ee56984987f, type: 3}
+      propertyPath: vida
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7549625500440353245, guid: 899613ec6c63bd04ab778ee56984987f, type: 3}
       propertyPath: m_Name
       value: cerdo
