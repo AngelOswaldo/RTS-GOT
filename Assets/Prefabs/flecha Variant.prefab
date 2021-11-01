@@ -111,10 +111,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: flecha Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8e08037c0a8a5d64b98be240401cb628, type: 3}
-      propertyPath: m_TagString
-      value: Bala
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e08037c0a8a5d64b98be240401cb628, type: 3}
 --- !u!1 &1807840794965049950 stripped

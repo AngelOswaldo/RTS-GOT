@@ -10,8 +10,6 @@ public class Atacar : MonoBehaviour
     [SerializeField]
     GameObject balaPrefab;
 
-    float dilay;
-
     //cada cuanto tiempo se hara el disparo o ataque
     [SerializeField]
     private float tiempoDisparo;
@@ -20,9 +18,6 @@ public class Atacar : MonoBehaviour
 
     //variable donde se guardara la posicion del objetivo
     Transform objetivo;
-
-    [HideInInspector]
-    public string estado;
 
     
 
@@ -37,40 +32,24 @@ public class Atacar : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+
+    }
 
     private void OnTriggerStay(Collider other) {
         //se obtiene la posicion del objetivo
         
 
         if (disparo == true && other.tag=="Animal") {
-
-            dilay += Time.deltaTime;
-
-            if (dilay >= 0.7f) {
-                objetivo = other.transform;
-                Debug.Log("choque");
-                StartCoroutine("TiempoDisparo");
-                gameObject.GetComponent<MovYSeleccion>().anim.SetInteger("estado", 2);
-                gameObject.GetComponent<MovYSeleccion>().nav.destination = transform.position;
-
-                estado = "ataque";
-            }
-            
+            objetivo = other.transform;
+            Debug.Log("choque");
+            StartCoroutine("TiempoDisparo");
 
         }
     
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Animal") {
-
-            estado = "no ataque";
-            dilay = 0;
-        }
-    }
-
-
 
 
     //ataque y tiempo de disparo
@@ -86,5 +65,4 @@ public class Atacar : MonoBehaviour
         yield return new WaitForSeconds(tiempoDisparo);
         disparo = true;
     }
-    
 }
