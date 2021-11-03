@@ -1,17 +1,8 @@
 fileFormatVersion: 2
-guid: 654809846acdb41e19246df1536d672b
+guid: 116f00810f0b740dfba44f9154769da1
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: -8771060374702273451
-    second: Edificio 1 Bastion de Tormentas Huesos|Abrir porton
-  - first:
-      74: 6743260880109245813
-    second: Edificio 1 Bastion de Tormentas Huesos|Abrir y cerrar
-  - first:
-      74: -5999090974728095116
-    second: Edificio 1 Bastion de Tormentas Huesos|Cerrar porton
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -94,7 +85,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
