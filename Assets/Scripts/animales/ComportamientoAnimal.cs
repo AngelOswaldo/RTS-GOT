@@ -16,7 +16,7 @@ public class ComportamientoAnimal : MonoBehaviour
     [SerializeField]
     float speed;
     [SerializeField]
-    float daño;
+    float damage;
     
     //indicador de si esta huyendo o no
     [HideInInspector]
@@ -114,7 +114,7 @@ public class ComportamientoAnimal : MonoBehaviour
                 
                 
                 if (delay >= 1.5f) {
-                    other.gameObject.GetComponent<SoldadoController>().vida -= daño;
+                    other.gameObject.GetComponent<SoldadoController>().vida -= damage;
                     Debug.Log(other.gameObject.GetComponent<SoldadoController>().vida);
                     delay = 0;
                 }
