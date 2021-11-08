@@ -20,7 +20,7 @@ public class Piso : MonoBehaviour
     {
         for (int i = 0; i < GameManager.npcControlados.Count; i++) {
 
-            GameManager.npcControlados[i].GetComponent<MovYSeleccion>().seleccion = false;
+            GameManager.npcControlados[i].GetComponent<SoldadoController>().seleccion = false;
             
         
         }

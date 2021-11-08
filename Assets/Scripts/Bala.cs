@@ -25,5 +25,14 @@ public class Bala : MonoBehaviour
         transform.position += velocity * speed * Time.deltaTime;
         Destroy(gameObject, 2);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Animal") {
+
+            Destroy(gameObject);
+
+        }
+    }
 }
 //2931540891

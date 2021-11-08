@@ -21,6 +21,7 @@ public class Atacar : MonoBehaviour
     //variable donde se guardara la posicion del objetivo
     Transform objetivo;
 
+    //estado en el que se encuentra, ataque, no ataque
     [HideInInspector]
     public string estado;
 
@@ -39,19 +40,22 @@ public class Atacar : MonoBehaviour
 
 
     private void OnTriggerStay(Collider other) {
-        //se obtiene la posicion del objetivo
         
-
+        //en caso de que colosione con un animal se procedera a atacar
         if (disparo == true && other.tag=="Animal") {
+
 
             dilay += Time.deltaTime;
 
             if (dilay >= 0.7f) {
+                //se obtiene el objetivo
                 objetivo = other.transform;
-                Debug.Log("choque");
+                //se activa el corrutine de disparo
                 StartCoroutine("TiempoDisparo");
-                gameObject.GetComponent<MovYSeleccion>().anim.SetInteger("estado", 2);
-                gameObject.GetComponent<MovYSeleccion>().nav.destination = transform.position;
+                //se activa la animacion de ataque
+                gameObject.GetComponent<SoldadoController>().anim.SetInteger("estado", 2);
+                //deja de moverse
+                gameObject.GetComponent<SoldadoController>().nav.destination = transform.position;
 
                 estado = "ataque";
             }
@@ -63,9 +67,11 @@ public class Atacar : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //si deja de colisionar con un animal
         if (other.tag == "Animal") {
-
+            //el estado cambia
             estado = "no ataque";
+            //el tiempo de dilay se resetea
             dilay = 0;
         }
     }
