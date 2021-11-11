@@ -118,10 +118,11 @@ public class ComportamientoAnimal : MonoBehaviour
                     Debug.Log(other.gameObject.GetComponent<SoldadoController>().vida);
                     delay = 0;
                 }
+                if(other.gameObject.GetComponent<SoldadoController>().vida > 0) anim.SetInteger("estado", 3);
 
-                if (other.gameObject.GetComponent<SoldadoController>().vida <= 0) Desactivacion();
+                if (other.gameObject.GetComponent<SoldadoController>().vida <= 0) anim.SetInteger("estado", 0);
+
                 
-                anim.SetInteger("estado", 3);
                 Desactivacion();
             }
 

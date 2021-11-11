@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 public class SoldadoController : MonoBehaviour
 {
-    
+    [StringInList("rango", "cercano")]
+    public string tipoAtaque;
+
+
     public float vida;
 
     [HideInInspector]
@@ -17,6 +20,10 @@ public class SoldadoController : MonoBehaviour
 
     [HideInInspector]
     public Animator anim;
+
+    float delay = 0;
+
+    bool ataque = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +50,28 @@ public class SoldadoController : MonoBehaviour
             }
         }
 
+
+        //CUANDO EL TIPO DE ATAQUE SEA DE RANGO
+        if (tipoAtaque == "rango") {
+
+            //si el objeto no se mueve y no esta atacando entonces se activara la animacion de idle
+            if (nav.velocity.magnitude == 0 && gameObject.GetComponent<Atacar>().estado != "ataque") anim.SetInteger("estado", 0);
+
+        }
+
+
+        //CUANDO EL TIPO DE ATAQUE SEA CERCANO
+        if (tipoAtaque == "cercano") {
+
+            if (nav.velocity.magnitude == 0 && ataque==false) {
+
+                anim.SetInteger("estado", 0);              
+
+            }
+            
+
+        }
         
-        //si el objeto no se mueve y no esta atacando entonces se activara la animacion de idle
-        if(nav.velocity.magnitude==0 && gameObject.GetComponent<Atacar>().estado!="ataque") anim.SetInteger("estado", 0);
 
         if (vida <= 0) {
 
@@ -53,7 +79,9 @@ public class SoldadoController : MonoBehaviour
             Destroy(gameObject, 3);
 
         }
-     
+
+        delay += Time.deltaTime;
+
     }
 
     private void OnMouseDown()
@@ -64,5 +92,40 @@ public class SoldadoController : MonoBehaviour
         
     }
 
-    
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (tipoAtaque == "cercano" && other.tag == "Animal")
+        {
+
+
+            float distancia = Vector3.Distance(transform.position, other.transform.position);
+            nav.destination = other.transform.position;
+            anim.SetInteger("estado", 1);
+
+            if (distancia < 1.5)
+            {
+                ataque = true;
+                if (delay >= 1.5f)
+                {
+                    other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida -= 3;
+                    delay = 0;
+                }
+
+                if(other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida>0) anim.SetInteger("estado", 2);
+                if (other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0) anim.SetInteger("estado", 0);
+
+                nav.destination = transform.position;
+
+            }
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+
+        anim.SetInteger("estado", 0);
+        ataque = false;
+
+    }
 }
