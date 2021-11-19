@@ -155,11 +155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1128439109083244, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Animal
       objectReference: {fileID: 0}
     - target: {fileID: 1434077636947040, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_TagString
-      value: Animal
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4567849000355610, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_RootOrder

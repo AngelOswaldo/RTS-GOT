@@ -34,7 +34,7 @@ public class Colocacion : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && movimientoPreColocacion == true)
         {
             movimientoPreColocacion = false;
             GameManager.vComida -= GameManager.vPrecioAldeanos;

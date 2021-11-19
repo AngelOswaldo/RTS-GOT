@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         npcControlados = new List<GameObject>();
+
+        if (vComida <= 0) vComida = 0;
     }
 
     void Update() {

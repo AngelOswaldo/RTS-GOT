@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Crear : MonoBehaviour
 {
+
     [SerializeField]
     GameObject prefab;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -96,10 +96,25 @@ public class ComportamientoAnimal : MonoBehaviour
         //si el animal es un tipo no hostil y un soldado esta en su zona entonces se obtendra la direccion de huida y se activara el modo huir
         if (other.tag == "soldado" && tipoAnimal == "noHostil") {
             
-            //se obtiene la direccion de huida
-            direccion = (transform.position - other.transform.position).normalized;
             
-            estadoHuir = true;
+            float distancia = Vector3.Distance(transform.position, other.transform.position);
+            if (distancia > 3)
+            {
+                //se obtiene la direccion de huida
+                direccion = (transform.position - other.transform.position).normalized;
+                estadoHuir = true;
+            }
+            else {
+
+                estadoHuir = false;
+                Desactivacion();
+                anim.SetInteger("estado", 0);
+
+            }
+
+            
+            
+
 
         }
 
@@ -132,6 +147,7 @@ public class ComportamientoAnimal : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //si no hay nadie en la zona del animal entonces dejara de huir, perseguir o atacar
+        estadoHuir = false;
         Desactivacion();      
         anim.SetInteger("estado", 0);
     }

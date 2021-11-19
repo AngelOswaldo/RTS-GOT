@@ -24,7 +24,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7276396211176799405}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.16939673, z: 0.7}
@@ -112,15 +112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.19
+      value: -8.438802
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.06999874
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.75
+      value: -5.9215345
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_Name
-      value: Espadachin
+      value: Espadachin Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3d07d001ce859e4fae8827c35910c5a, type: 3}
       propertyPath: m_TagString
