@@ -1070,6 +1070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7549355011787216337, guid: 899613ec6c63bd04ab778ee56984987f, type: 3}
+      propertyPath: m_TagString
+      value: Cuerpo
+      objectReference: {fileID: 0}
     - target: {fileID: 7549625500440353245, guid: 899613ec6c63bd04ab778ee56984987f, type: 3}
       propertyPath: m_Name
       value: cerdo Variant (2)
@@ -3302,10 +3306,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1250179570, guid: 7d8e63b9fca4c3340bce406a9ef74f1e, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7946557816171082809, guid: 7d8e63b9fca4c3340bce406a9ef74f1e, type: 3}
       propertyPath: m_RootOrder
       value: 9

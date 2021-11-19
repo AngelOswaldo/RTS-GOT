@@ -28,7 +28,7 @@ public class Bala : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Animal") {
+        if (other.tag == "Cuerpo") {
 
             Destroy(gameObject);
 

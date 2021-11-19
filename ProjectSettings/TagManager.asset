@@ -10,6 +10,7 @@ TagManager:
   - cuartelCaballeros
   - cuartelEspadachines
   - cuartelArqueros
+  - Cuerpo
   layers:
   - Default
   - TransparentFX

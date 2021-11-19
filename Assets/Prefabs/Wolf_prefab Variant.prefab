@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoAnimal: hostil
   speed: 20
-  damage: 50
+  damage: 10
   estadoHuir: 0
   destino: {fileID: 0}
 --- !u!65 &1034060871
@@ -51,6 +51,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1148075359307184, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
+      propertyPath: m_TagString
+      value: Cuerpo
+      objectReference: {fileID: 0}
     - target: {fileID: 1817446995028838, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
       propertyPath: m_Name
       value: Wolf_prefab
