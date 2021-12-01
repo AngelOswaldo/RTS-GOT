@@ -13,10 +13,8 @@ public class ComportamientoAnimal : MonoBehaviour
     public string tipoAnimal;
 
     //velocidad del animal
-    public float speedFijo;
-    [HideInInspector]
-    public float speedVariable;
-
+    [SerializeField]
+    float speed;
     [SerializeField]
     float damage;
     
@@ -32,24 +30,18 @@ public class ComportamientoAnimal : MonoBehaviour
 
     //variable en donde se guardara una direccion
     Vector3 direccion;
-
-    //tiempo en el que volvera a aparecer el animal
-
-    float tiempo = 0;
     // Start is called before the first frame update
     void Start()
     {
-        speedVariable = speedFijo;
         estadoHuir = false;
         anim = gameObject.GetComponent<Animator>();
         animal = GetComponent<NavMeshAgent>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         //ANIMAL NO HOSTIL
 
         if (tipoAnimal == "noHostil") {
@@ -58,24 +50,20 @@ public class ComportamientoAnimal : MonoBehaviour
             if (estadoHuir == true)
             {
 
-                destino.transform.position = new Vector3(transform.position.x + direccion.x * speedVariable * Time.deltaTime, 0f, transform.position.z + direccion.z * speedVariable * Time.deltaTime);
+                destino.transform.position = new Vector3(transform.position.x + direccion.x * speed * Time.deltaTime, 0f, transform.position.z + direccion.z * speed * Time.deltaTime);
                 animal.destination = destino.transform.position;
                 anim.SetInteger("estado", 1);
 
             }
 
             //CONDICION DE MORIR, si se detecta que la vida es menos o igual a 0 entonces la comida aumentara y el objeto(el animal) sera eliminado
-            if (transform.GetChild(0).gameObject.GetComponent<Animal>().vidaVariante <= 0)
+            if (transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0)
             {
-                
-                tiempo += Time.deltaTime;
-                speedVariable = 0;
-                GameManager.vComida += transform.GetChild(0).gameObject.GetComponent<Animal>().comidaVariante;
-                transform.GetChild(0).gameObject.GetComponent<Animal>().comidaVariante = 0;
+                speed = 0;
+                GameManager.vComida += transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida;
+                transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida = 0;
                 anim.SetInteger("estado", 2);
-                if (tiempo >= 3)gameObject.SetActive(false);
-
-                //Destroy(gameObject, 3);
+                Destroy(gameObject, 3);
 
             }
 
@@ -86,9 +74,9 @@ public class ComportamientoAnimal : MonoBehaviour
         if (tipoAnimal == "hostil") {
 
             //MISMA CONDICION DE MORIR PARA EL ANIMAL HOSTIL
-            if (transform.GetChild(0).gameObject.GetComponent<Animal>().vidaVariante <= 0)
+            if (transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0)
             {
-                speedVariable = 0;
+                speed = 0;
                 GameManager.vComida += transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida;
                 transform.GetChild(0).gameObject.GetComponent<Animal>().comidaObtenida = 0;
                 anim.SetInteger("estado", 2);
@@ -108,7 +96,7 @@ public class ComportamientoAnimal : MonoBehaviour
         //si el animal es un tipo no hostil y un soldado esta en su zona entonces se obtendra la direccion de huida y se activara el modo huir
         if (other.tag == "soldado" && tipoAnimal == "noHostil") {
             
-            //se calcula la distancia entre el animal y el soldado
+            
             float distancia = Vector3.Distance(transform.position, other.transform.position);
             if (distancia > 3)
             {

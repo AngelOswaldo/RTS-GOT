@@ -13,17 +13,11 @@ public class Animal : MonoBehaviour
     
 
     public int vida;
-    [HideInInspector]
-    public int vidaVariante;
-
     public int comidaObtenida;
-    [HideInInspector]
-    public int comidaVariante;
     // Start is called before the first frame update
     void Start()
     {
-        comidaVariante = comidaObtenida;
-        vidaVariante = vida;
+        
     }
 
     // Update is called once per frame
@@ -36,7 +30,7 @@ public class Animal : MonoBehaviour
 
         if (other.tag == "Bala") {
 
-            vidaVariante-=other.GetComponent<Bala>().damage;
+            vida-=other.GetComponent<Bala>().damage;
             
         }
 

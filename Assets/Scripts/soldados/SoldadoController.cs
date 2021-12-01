@@ -71,7 +71,6 @@ public class SoldadoController : MonoBehaviour
             
 
         }
-        if (Input.GetKeyDown(KeyCode.Q)) Debug.Log(nav.velocity.magnitude);
         
 
         if (vida <= 0) {
@@ -109,16 +108,12 @@ public class SoldadoController : MonoBehaviour
                 ataque = true;
                 if (delay >= 1.5f)
                 {
-                    other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vidaVariante -= 3;
+                    other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida -= 3;
                     delay = 0;
                 }
 
-                if(other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vidaVariante>0) anim.SetInteger("estado", 2);
-                if (other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vidaVariante <= 0) {
-                  
-                    anim.SetInteger("estado", 0);
-                    ataque = false;
-                } 
+                if(other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida>0) anim.SetInteger("estado", 2);
+                if (other.gameObject.transform.GetChild(0).gameObject.GetComponent<Animal>().vida <= 0) anim.SetInteger("estado", 0);
 
                 nav.destination = transform.position;
 
