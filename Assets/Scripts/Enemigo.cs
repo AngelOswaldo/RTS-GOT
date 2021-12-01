@@ -94,6 +94,7 @@ public class Enemigo : MonoBehaviour
                 {
                     other.gameObject.gameObject.GetComponent<Estructuras>().vidaVariable -= 3;
                     delay = 0;
+                    Debug.Log(other.gameObject.gameObject.GetComponent<Estructuras>().vidaVariable);
                 }
 
                 if (other.gameObject.GetComponent<Estructuras>().vidaVariable > 0) anim.SetInteger("estado", 2);

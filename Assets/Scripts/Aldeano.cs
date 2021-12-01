@@ -43,7 +43,7 @@ public class Aldeano : MonoBehaviour
         delay += Time.deltaTime;
         if (Input.GetMouseButton(1) && seleccion == true)
         {
-
+            
             RaycastHit hit;
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
@@ -64,7 +64,8 @@ public class Aldeano : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+        Debug.Log("detectado");
+
         if (other.tag == "Piedra") {
 
             nav.destination = other.transform.position;
@@ -129,9 +130,9 @@ public class Aldeano : MonoBehaviour
             }
 
         }
-
+        
         if (other.tag == "cuartelArqueros") {
-
+            Debug.Log(other.GetComponent<Estructuras>().vidaVariable);
             if (other.GetComponent<Estructuras>().vidaVariable < other.GetComponent<Estructuras>().vidaInicial) {
 
                 float distancia = Vector3.Distance(transform.position, other.transform.position);
@@ -144,7 +145,7 @@ public class Aldeano : MonoBehaviour
                     if (tiempoRep2 >= tiempoRep) {
 
                         other.GetComponent<Estructuras>().vidaVariable += 1;
-                        Debug.Log(other.GetComponent<Estructuras>().vidaVariable);
+                        
                         tiempoRep2 = 0;
 
                     }
