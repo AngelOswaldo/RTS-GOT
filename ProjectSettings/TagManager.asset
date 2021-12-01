@@ -11,6 +11,8 @@ TagManager:
   - cuartelEspadachines
   - cuartelArqueros
   - Cuerpo
+  - Piedra
+  - Arbol
   layers:
   - Default
   - TransparentFX
