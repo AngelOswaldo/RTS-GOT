@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeleccionEstructuras : MonoBehaviour
+public class InterfazBotones : MonoBehaviour
 {//016055555 2
     [SerializeField]
-    [StringInList("espadachin", "arquero", "caballero")]
-    string tipoEstructura;
+    [StringInList("cuartel", "aldeano")]
+    string mostrarInterfaz;
 
     BotonManager botonManager;
     // Start is called before the first frame update
@@ -31,25 +31,19 @@ public class SeleccionEstructuras : MonoBehaviour
 
         }
 
-        if (tipoEstructura == "espadachin") {
+        if (mostrarInterfaz == "cuartel")
+        {
 
-            Debug.Log("cuartel de espadachines");
-            botonManager.botones[1].SetActive(true);
-
-        }
-        if (tipoEstructura == "arquero") {
-
-            Debug.Log("cuartel de arqueros");
+            Debug.Log("cuartel");
             botonManager.botones[0].SetActive(true);
-
-        }
-        if (tipoEstructura == "caballero") {
-
-            Debug.Log("cuartel de caballeros");
+            botonManager.botones[1].SetActive(true);
             botonManager.botones[2].SetActive(true);
 
-        } 
+        }
 
-
+        if (mostrarInterfaz == "aldeano")
+        {
+            botonManager.botones[3].SetActive(true);
+        }
     }
 }

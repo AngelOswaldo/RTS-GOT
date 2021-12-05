@@ -13,16 +13,32 @@ public class Aldeano : MonoBehaviour
     [HideInInspector]
     public bool seleccion;
 
+    [Header("Recoleccion")]
     [SerializeField]
     int CantidadPiedraRecolectar;
 
     [SerializeField]
     int CantidadMaderaRecolectar;
 
+    [Header("Carga maxima")]
+    [SerializeField]
+    int maxPiedra;
+    int piedraVariable;
+
+    [SerializeField]
+    int maxMadera;
+    int maderaVariable;
+
+    [SerializeField]
+    int maxComida;
+    int comidaVariable;
+
+
+    [Header("Tiempos")]
     [SerializeField]
     float tiempoRecoleccion;
     float tiempo;
-
+  
     [SerializeField]
     float tiempoRep;
     float tiempoRep2=0;
@@ -66,25 +82,29 @@ public class Aldeano : MonoBehaviour
     {
         Debug.Log("detectado");
 
-        if (other.tag == "Piedra") {
+        //si detecta piedras y aun tiene espacio para llevar piedras
+        //entonces podra ir a recolectar
+        if (other.tag == "Piedra" && piedraVariable<maxPiedra) {
 
             nav.destination = other.transform.position;
             float distancia = Vector3.Distance(transform.position, other.transform.position);
             if (distancia <= 1) {
 
                 tiempo += Time.deltaTime;
+                //cada cierto tiempo la cantidad de piedra que lleva aumenta y
+                //el recurso se va disminuyendo segun la cantidad que recolecte el aldeano
                 if (tiempo >= tiempoRecoleccion) {
 
-                    GameManager.vPiedra += CantidadPiedraRecolectar;
-                    other.GetComponent<Recursos>().cantVariable -= CantidadPiedraRecolectar;
+                    piedraVariable += CantidadPiedraRecolectar;
+                    other.GetComponent<Recursos>().cantVariable-= CantidadPiedraRecolectar;
                     tiempo = 0;
-
+                    Debug.Log(piedraVariable);
                 }
 
             }
         }
 
-        if (other.tag == "Arbol")
+        if (other.tag == "Arbol" && maderaVariable<maxMadera)
         {
 
             nav.destination = other.transform.position;
@@ -96,9 +116,10 @@ public class Aldeano : MonoBehaviour
                 if (tiempo >= tiempoRecoleccion)
                 {
 
-                    GameManager.vMadera += CantidadMaderaRecolectar;
+                    maderaVariable += CantidadMaderaRecolectar;
                     other.GetComponent<Recursos>().cantVariable -= CantidadMaderaRecolectar;
                     tiempo = 0;
+                    Debug.Log(maderaVariable);
 
                 }
 
