@@ -68,6 +68,22 @@ public class Aldeano : MonoBehaviour
 
             }
         }
+
+
+        if (piedraVariable >= maxPiedra) {
+
+            nav.destination = GameObject.Find("deposito").transform.position;
+            float distancia = Vector3.Distance(transform.position, GameObject.Find("deposito").transform.position);
+
+            if (distancia <= 5) {
+
+                nav.destination = transform.position;
+                GameManager.vPiedra += piedraVariable;
+                piedraVariable = 0;
+
+            }
+
+        }
     }
 
     private void OnMouseDown()
@@ -80,7 +96,6 @@ public class Aldeano : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("detectado");
 
         //si detecta piedras y aun tiene espacio para llevar piedras
         //entonces podra ir a recolectar

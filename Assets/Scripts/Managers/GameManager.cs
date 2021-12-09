@@ -7,24 +7,33 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    //costo modificable de crear aldeanos
+    
+    [Header("Maximos")]
+
+    //cantidad maxima de poblacion segun el castillo
+    [SerializeField]
+    int poblacionMaximaCastillo;
+    //cantidad maxima de poblacion segun las casas que se tenga
+    [SerializeField]
+    int maxAldeanos;
+    //cantidad de recursos que se pueden guardar segun los depositos que se tenga
+    [SerializeField]
+    int maxRecursos;
+
+    [Header("Precios")]
     [SerializeField]
     int precioAldeanos;
 
-    //costo real para crear los aldeanos
-    public static int vPrecioAldeanos;
-    //cantidad maxima de aldeanos
-    public int maxAldeanos = 10;
-    //cantidad actual de aldeanos
-    public static int cantAldeanos = 0;
 
-    //valores o cantidad de recursos que se tiene
+    //valores o cantidad de recursos variables, osea que cambian
     public static int vOro;
     public static int vMadera;
     public static int vPiedra;
     public static int vComida;
 
-
+    public static int cantAldeanos = 0;
+    public static int vPrecioAldeanos;
+    [Header("Textos a mostrar")]
     //texto para mostrar los valores o cantidades de recursos que se tiene
     [SerializeField]
     Text oro;
@@ -42,7 +51,7 @@ public class GameManager : MonoBehaviour
     //lista de npc
     public static List<GameObject> npcControlados;
 
-
+    
 
     // Start is called before the first frame update
     void Start()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class InterfazBotones : MonoBehaviour
 {//016055555 2
     [SerializeField]
-    [StringInList("cuartel", "aldeano")]
+    [StringInList("cuartel", "aldeano","castillo")]
     string mostrarInterfaz;
 
     BotonManager botonManager;
@@ -44,6 +44,11 @@ public class InterfazBotones : MonoBehaviour
         if (mostrarInterfaz == "aldeano")
         {
             botonManager.botones[3].SetActive(true);
+        }
+
+        if (mostrarInterfaz == "castillo")
+        {
+            botonManager.botones[4].SetActive(true);
         }
     }
 }
