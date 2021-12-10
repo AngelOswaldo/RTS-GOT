@@ -11,7 +11,7 @@ public class TowerPerception : MonoBehaviour
     {
         if(other.CompareTag(myTower.enemiesTag))
         {
-            myTower.enemies.Add(other.gameObject);
+            myTower.enemies.Add(other.GetComponent<SoldadoController>());
 
             //MANDAMOS A LLAMAR LA FUNCION DE ATAQUE
             if (myTower.haveEnemy == false)
@@ -20,6 +20,19 @@ public class TowerPerception : MonoBehaviour
                 StartCoroutine(myTower.Attack());
             }
         }
+        else if(other.CompareTag(myTower.alliesTag))
+        {
+            if(other.GetComponent<SoldadoController>().tipoAtaque == "rango")
+            {
+                if(myTower.archers.Count<myTower.maxArchers)
+                {
+                    myTower.archers.Add(other.GetComponent<SoldadoController>());
+                    other.gameObject.SetActive(false);
+                }
+
+            }
+        }
+
     }
 
     //QUITAMOS DE LA LISTA LOS ENEMIGOS QUE SE SALGAN DEL RANGO
@@ -27,7 +40,7 @@ public class TowerPerception : MonoBehaviour
     {
         if(other.CompareTag(myTower.enemiesTag))
         {
-            myTower.enemies.Remove(other.gameObject);
+            myTower.enemies.Remove(other.GetComponent<SoldadoController>());
         }
     }
 }

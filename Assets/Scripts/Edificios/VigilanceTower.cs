@@ -12,11 +12,12 @@ public class VigilanceTower : MonoBehaviour
 
     [Header("Enemy")]
     public bool haveEnemy = false;
-    public List<GameObject> enemies;
+    public List<SoldadoController> enemies;
     public string enemiesTag;
 
     [Header("Allies")]
-    public List<GameObject> archers;
+    public List<SoldadoController> archers;
+    public string alliesTag;
     public int maxArchers;
 
     private void Start()
@@ -29,16 +30,29 @@ public class VigilanceTower : MonoBehaviour
         if(enemies.Count<0)
         {
             haveEnemy = false;
+            enemies.Clear();
         }
         
     }
 
     public IEnumerator Attack()
     {
+        int enemyCount = 0;
         while(haveEnemy)
         {
-            //CalculateDamage();
-            //ATACAMOS A LOS ENEMIGOS
+            if (enemies[enemyCount] == null)
+            {
+                if(enemyCount<enemies.Count-1)
+                {
+                    enemyCount += 1;
+                }
+                else
+                {
+                    enemies.Clear();
+                    break;
+                }
+            }
+            enemies[enemyCount].vida -= CalculateDamage();
             yield return new WaitForSeconds(speedAttack);
         }
     }
