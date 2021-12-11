@@ -13,6 +13,7 @@ TagManager:
   - Cuerpo
   - Piedra
   - Arbol
+  - Aldeano
   layers:
   - Default
   - TransparentFX
