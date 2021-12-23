@@ -84,11 +84,12 @@ public class Atacar : MonoBehaviour
     {
         disparo = false;
         
-        GameObject bala = Instantiate(balaPrefab, transform.position, objetivo.transform.rotation);
+        GameObject bala = Instantiate(balaPrefab, transform.position, Quaternion.identity);
+        bala.GetComponent<Bala>().target = objetivo;
 
-        Vector3 direccion = (objetivo.position - bala.transform.position).normalized;
+        //Vector3 direccion = (objetivo.position - bala.transform.position).normalized;
 
-        bala.GetComponent<Bala>().velocity = direccion * bala.GetComponent<Bala>().speed;
+        //bala.GetComponent<Bala>().velocity = direccion * bala.GetComponent<Bala>().speed;
         yield return new WaitForSeconds(tiempoDisparo);
         disparo = true;
     }
