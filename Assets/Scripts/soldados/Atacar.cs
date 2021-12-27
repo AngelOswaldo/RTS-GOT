@@ -10,6 +10,9 @@ public class Atacar : MonoBehaviour
     [SerializeField]
     GameObject balaPrefab;
 
+    //SpawnPoint donde aparece la bala
+    public Transform spawnPoint;
+
     float dilay;
 
     //cada cuanto tiempo se hara el disparo o ataque
@@ -83,8 +86,8 @@ public class Atacar : MonoBehaviour
     IEnumerator TiempoDisparo()
     {
         disparo = false;
-        
-        GameObject bala = Instantiate(balaPrefab, transform.position, Quaternion.identity);
+
+        GameObject bala = Instantiate(balaPrefab, spawnPoint.position, Quaternion.identity);
         bala.GetComponent<Bala>().target = objetivo;
 
         //Vector3 direccion = (objetivo.position - bala.transform.position).normalized;
