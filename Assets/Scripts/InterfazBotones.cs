@@ -34,7 +34,6 @@ public class InterfazBotones : MonoBehaviour
         if (mostrarInterfaz == "cuartel")
         {
 
-            Debug.Log("cuartel");
             botonManager.botones[0].SetActive(true);
             botonManager.botones[1].SetActive(true);
             botonManager.botones[2].SetActive(true);
@@ -44,6 +43,7 @@ public class InterfazBotones : MonoBehaviour
         if (mostrarInterfaz == "aldeano")
         {
             botonManager.botones[3].SetActive(true);
+            botonManager.botones[5].SetActive(true);
         }
 
         if (mostrarInterfaz == "castillo")

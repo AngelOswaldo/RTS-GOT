@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Colocacion : MonoBehaviour
+public class ColocacionEstructuras : MonoBehaviour
 {
 
     RaycastHit hit;
@@ -47,8 +47,8 @@ public class Colocacion : MonoBehaviour
     IEnumerator CargaDeColocacion(){
 
         yield return new WaitForSeconds(tiempoColocacion);
-        GameObject npc = Instantiate(prefab, transform.position, transform.rotation);
-        GameManager.npcControlados.Add(npc);
+        GameObject nuevaEstructura = Instantiate(prefab, transform.position, transform.rotation);
+        
         Destroy(gameObject);
 
     }

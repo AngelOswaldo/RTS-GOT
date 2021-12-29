@@ -10,9 +10,6 @@ public class Aldeano : MonoBehaviour
     [HideInInspector]
     public NavMeshAgent nav;
 
-    [HideInInspector]
-    public bool seleccion;
-
     [Header("Recoleccion")]
     [SerializeField]
     int CantidadPiedraRecolectar;
@@ -49,15 +46,16 @@ public class Aldeano : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seleccion = false;
         nav = GetComponent<NavMeshAgent>();
+        GameManager.npcControlados.Add(gameObject);
+        piedraVariable = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         delay += Time.deltaTime;
-        if (Input.GetMouseButton(1) && seleccion == true)
+        if (Input.GetMouseButton(1) && gameObject.GetComponent<Seleccion>().seleccion == true)
         {
             
             RaycastHit hit;
@@ -69,30 +67,17 @@ public class Aldeano : MonoBehaviour
             }
         }
 
-
+        //cuando ya tiene el maximo de piedras que puede cargar
+        //buscara el deposito mas cercano e ira a dejar su carga aumentando el score en pantalla
         if (piedraVariable >= maxPiedra) {
 
-            nav.destination = GameObject.Find("deposito").transform.position;
-            float distancia = Vector3.Distance(transform.position, GameObject.Find("deposito").transform.position);
-
-            if (distancia <= 5) {
-
-                nav.destination = transform.position;
+                ManagerEstructuras.CalcularDepositoCercano(this.gameObject);
                 GameManager.vPiedra += piedraVariable;
-                piedraVariable = 0;
-
-            }
+                piedraVariable = 0;        
 
         }
     }
 
-    private void OnMouseDown()
-    {
-
-        if (seleccion == false) seleccion = true;
-        else seleccion = false;
-
-    }
 
     private void OnTriggerStay(Collider other)
     {

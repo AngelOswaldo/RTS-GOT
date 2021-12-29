@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Seleccion : MonoBehaviour
 {
+    [HideInInspector]
+    public bool seleccion=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,13 @@ public class Seleccion : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+
+        if (seleccion == false) seleccion = true;
+        else seleccion = false;
+
     }
 }

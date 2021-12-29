@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         vOro = 200;
         vMadera = 200;
         vPiedra = 200;
-        vComida = 200;
+        vComida = 500;
         vPrecioAldeanos = precioAldeanos;
     }
 

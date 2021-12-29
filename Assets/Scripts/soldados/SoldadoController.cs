@@ -14,10 +14,6 @@ public class SoldadoController : MonoBehaviour
     [HideInInspector]
     public NavMeshAgent nav;
 
-    //variable para verificar si el objeto esta seleccionado
-    [HideInInspector]
-    public bool seleccion;
-
     [HideInInspector]
     public Animator anim;
 
@@ -28,17 +24,23 @@ public class SoldadoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seleccion = false;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        GameManager.npcControlados.Add(gameObject);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (nav.velocity.magnitude > 0) {
+
+            anim.SetInteger("estado", 1);
+
+        }
         //si el objeto esta seleccionado y das un click derecho irá a la direccion en donde se dio el click
-        if (Input.GetMouseButton(1) && seleccion==true) {
+        if (Input.GetMouseButton(1) && GetComponent<Seleccion>().seleccion==true) {
 
             RaycastHit hit;
 
@@ -85,13 +87,7 @@ public class SoldadoController : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
-    {
-        
-        if (seleccion == false) seleccion = true;
-        else seleccion = false;
-        
-    }
+    
 
     private void OnTriggerStay(Collider other)
     {

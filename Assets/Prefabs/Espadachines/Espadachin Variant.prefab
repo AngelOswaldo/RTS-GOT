@@ -63,7 +63,6 @@ MonoBehaviour:
   tipoAtaque: cercano
   vida: 100
   nav: {fileID: 0}
-  seleccion: 0
   anim: {fileID: 0}
 --- !u!195 &2016363668
 NavMeshAgent:
@@ -87,6 +86,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-4105191311219579041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276396211176799405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f94ed3ed3d7d44f982b44a058f1b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seleccion: 0
 --- !u!1001 &7510766251577033212
 PrefabInstance:
   m_ObjectHideFlags: 0
