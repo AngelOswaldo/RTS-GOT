@@ -29,7 +29,7 @@ public class ColocacionEstructuras : MonoBehaviour
         
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) && movimientoPreColocacion==true) 
         {
-            hit.point = new Vector3(hit.point.x, 0.5f, hit.point.z);
+            hit.point = new Vector3(hit.point.x, 0, hit.point.z);
             transform.position = hit.point;
 
         }

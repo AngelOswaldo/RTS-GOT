@@ -61,14 +61,8 @@ public class GameManager : MonoBehaviour
         vPiedra = 200;
         vComida = 500;
         vPrecioAldeanos = precioAldeanos;
-    }
 
-    // Update is called once per frame
-    private void Awake()
-    {
         npcControlados = new List<GameObject>();
-
-        if (vComida <= 0) vComida = 0;
     }
 
     void Update() {
@@ -80,7 +74,9 @@ public class GameManager : MonoBehaviour
         comida.text = "Comida: " + vComida;
         aldeanos.text = "Aldeanos: " + cantAldeanos + "/" + maxAldeanos;
 
-    
+        if (vComida <= 0) vComida = 0;
+
+
     }
 
 

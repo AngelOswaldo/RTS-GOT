@@ -72,8 +72,7 @@ public class Aldeano : MonoBehaviour
         if (piedraVariable >= maxPiedra) {
 
                 ManagerEstructuras.CalcularDepositoCercano(this.gameObject);
-                GameManager.vPiedra += piedraVariable;
-                piedraVariable = 0;        
+                        
 
         }
     }
@@ -173,6 +172,17 @@ public class Aldeano : MonoBehaviour
                     
                 }
             }
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Deposito")
+        {
+
+            GameManager.vPiedra += piedraVariable;
+            piedraVariable = 0;
 
         }
     }
