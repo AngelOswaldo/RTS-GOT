@@ -3757,8 +3757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e2399b95f780a40ad0d3061c920f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poblacionMaximaCastillo: 0
-  maxAldeanos: 10
   maxRecursos: 0
   precioAldeanos: 100
   oro: {fileID: 1230489126}

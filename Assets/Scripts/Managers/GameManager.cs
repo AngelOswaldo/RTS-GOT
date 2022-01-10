@@ -10,12 +10,6 @@ public class GameManager : MonoBehaviour
     
     [Header("Maximos")]
 
-    //cantidad maxima de poblacion segun el castillo
-    [SerializeField]
-    int poblacionMaximaCastillo;
-    //cantidad maxima de poblacion segun las casas que se tenga
-    [SerializeField]
-    int maxAldeanos;
     //cantidad de recursos que se pueden guardar segun los depositos que se tenga
     [SerializeField]
     int maxRecursos;
@@ -31,7 +25,12 @@ public class GameManager : MonoBehaviour
     public static int vPiedra;
     public static int vComida;
 
+    //cantidad maxima de poblacion segun las casas que se tenga
+    public static int maxAldeanos =10;
+    
+    //cantidad actual de aldeanos que se tiene actualmente
     public static int cantAldeanos = 0;
+    //precio que cuesta los aldeanos
     public static int vPrecioAldeanos;
     [Header("Textos a mostrar")]
     //texto para mostrar los valores o cantidades de recursos que se tiene
@@ -61,6 +60,7 @@ public class GameManager : MonoBehaviour
         vPiedra = 200;
         vComida = 500;
         vPrecioAldeanos = precioAldeanos;
+
 
         npcControlados = new List<GameObject>();
     }
