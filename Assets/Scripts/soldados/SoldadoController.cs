@@ -28,6 +28,18 @@ public class SoldadoController : MonoBehaviour
         anim = GetComponent<Animator>();
         GameManager.npcControlados.Add(gameObject);
 
+        for (int i = 0; i < ManagerEstructuras.Cuarteles.Count; i++)
+        {
+
+            if (ManagerEstructuras.Cuarteles[i].GetComponent<Cuartel>().seleccion == true)
+            {
+                nav.destination = ManagerEstructuras.Cuarteles[i].transform.GetChild(3).transform.position;
+
+
+            }
+
+        }
+
     }
 
     // Update is called once per frame

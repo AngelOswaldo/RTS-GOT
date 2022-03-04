@@ -15,6 +15,9 @@ TagManager:
   - Arbol
   - Aldeano
   - Deposito
+  - Muralla
+  - Porton
+  - PrePorton
   layers:
   - Default
   - TransparentFX

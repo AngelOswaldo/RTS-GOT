@@ -9,7 +9,7 @@ public class Crear : MonoBehaviour
     GameObject prefab;
 
     [SerializeField]
-    [StringInList("Estructura","UnidadPelea")]
+    [StringInList("Estructura","UnidadPelea","Aldeano")]
     string tipoCreacion;
 
     GameObject unidad;
@@ -46,6 +46,17 @@ public class Crear : MonoBehaviour
                 }
 
             }
+
+        }
+
+        if (tipoCreacion == "Aldeano") {
+
+            if (GameManager.cantAldeanos < GameManager.maxAldeanos) {
+
+                Instantiate(prefab, GameObject.Find("castillo").transform.position, GameObject.Find("castillo").transform.rotation);
+
+            }
+            
 
         }
         

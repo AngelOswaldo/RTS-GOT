@@ -23,11 +23,16 @@ public class Cuartel : MonoBehaviour
     {
 
         //solo para probar la seleccion de cuarteles
+
+        /*/
         if (seleccion == true) {
+
 
             transform.GetChild(1).GetComponent<Renderer>().material.color = Color.black;
 
         } else transform.GetChild(1).GetComponent<Renderer>().material.color = Color.blue;
+
+        /*/
     }
 
     private void OnMouseDown()

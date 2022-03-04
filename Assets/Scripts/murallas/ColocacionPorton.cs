@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seleccion : MonoBehaviour
+public class ColocacionPorton : MonoBehaviour
 {
     [HideInInspector]
-    public bool seleccion=false;
+    public int contadorColisiones;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +15,15 @@ public class Seleccion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (contadorColisiones >= 9) {
+
+            Debug.Log("COLOCACION DISPONIBLE");
+
+        }
     }
 
-    private void OnMouseDown()
+    private void OnTriggerStay(Collider other)
     {
-
-        if (seleccion == false) seleccion = true;
-        else seleccion = false;
-
+        
     }
 }

@@ -7,14 +7,16 @@ public class ManagerEstructuras : MonoBehaviour
 
     public static List<GameObject>Cuarteles;
     public static List<GameObject>Depositos;
+    public static List<GameObject>TorresAltas;
     
 
-    public static GameObject DepositoCercano;
+
     // Start is called before the first frame update
     void Start()
     {
         Cuarteles = new List<GameObject>();
         Depositos = new List<GameObject>();      
+        TorresAltas = new List<GameObject>();      
     }
 
     // Update is called once per frame
@@ -48,9 +50,7 @@ public class ManagerEstructuras : MonoBehaviour
 
         }
 
-        DepositoCercano = Depositos[0];
-
-        aldeano.GetComponent<Aldeano>().nav.destination = DepositoCercano.transform.position;
+        aldeano.GetComponent<Aldeano>().nav.destination = Depositos[0].transform.position;
 
     }
 }

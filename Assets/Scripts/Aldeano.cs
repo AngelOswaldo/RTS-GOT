@@ -32,6 +32,10 @@ public class Aldeano : MonoBehaviour
 
 
     [Header("Tiempos")]
+
+    [SerializeField]
+    float tiempoDeCreacion;
+
     [SerializeField]
     float tiempoRecoleccion;
     float tiempo;
@@ -43,12 +47,17 @@ public class Aldeano : MonoBehaviour
     bool ataque = false;
     float delay = 0;
 
-    // Start is called before the first frame update
+    // Start is  called before the first frame update
     void Start()
     {
+        GameManager.cantAldeanos++;
         nav = GetComponent<NavMeshAgent>();
         GameManager.npcControlados.Add(gameObject);
         piedraVariable = 0;
+        maderaVariable = 0;
+        StartCoroutine("Salida");
+
+        
     }
 
     // Update is called once per frame
@@ -71,8 +80,14 @@ public class Aldeano : MonoBehaviour
         //buscara el deposito mas cercano e ira a dejar su carga aumentando el score en pantalla
         if (piedraVariable >= maxPiedra) {
 
-                ManagerEstructuras.CalcularDepositoCercano(this.gameObject);
+            ManagerEstructuras.CalcularDepositoCercano(this.gameObject);
                         
+        }
+
+        if (maderaVariable >= maxMadera)
+        {
+
+            ManagerEstructuras.CalcularDepositoCercano(this.gameObject);
 
         }
     }
@@ -180,11 +195,23 @@ public class Aldeano : MonoBehaviour
     {
         if (other.tag == "Deposito")
         {
-
+            //si llega al deposito entonces dejara los recursos que tenga encima 
             GameManager.vPiedra += piedraVariable;
             piedraVariable = 0;
 
+            GameManager.vMadera += maderaVariable;
+            maderaVariable = 0;
+
         }
+    }
+
+    IEnumerator Salida() {
+
+
+        yield return new WaitForSeconds(tiempoDeCreacion);
+        nav.destination = GameObject.Find("castillo").transform.GetChild(2).gameObject.transform.position;
+        
+
     }
 
 }

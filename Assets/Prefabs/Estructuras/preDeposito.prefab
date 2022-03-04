@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5171428020597595768, guid: d9d44299b8e435e43b7ca0fe23357abd, type: 3}
   tiempoColocacion: 2
+  tipoColocacion: movimiento
 --- !u!65 &5414013926172175710
 BoxCollider:
   m_ObjectHideFlags: 0

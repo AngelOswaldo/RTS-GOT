@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public static int vComida;
 
     //cantidad maxima de poblacion segun las casas que se tenga
-    public static int maxAldeanos =10;
+    public static int maxAldeanos;
     
     //cantidad actual de aldeanos que se tiene actualmente
     public static int cantAldeanos = 0;
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxAldeanos = 10;
         vOro = 200;
         vMadera = 200;
         vPiedra = 200;

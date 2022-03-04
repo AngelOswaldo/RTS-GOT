@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7484426432008890291, guid: 9d47df45d2df1074d8a04cda17bafaa9, type: 3}
   tiempoColocacion: 2
+  tipoColocacion: movimiento
 --- !u!1 &5974112223889862748
 GameObject:
   m_ObjectHideFlags: 0

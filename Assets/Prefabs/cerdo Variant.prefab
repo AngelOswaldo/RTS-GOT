@@ -72,7 +72,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 20
+  vidaVariante: 0
   comidaObtenida: 100
+  comidaVariante: 0
 --- !u!54 &77968813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,7 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipoAnimal: noHostil
-  speed: 30
+  speedFijo: 20
+  speedVariable: 0
   damage: 0
   estadoHuir: 0
   destino: {fileID: 1290091422}
@@ -167,15 +170,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4567849000355610, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.58
+      value: -12.996062
       objectReference: {fileID: 0}
     - target: {fileID: 4567849000355610, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 4567849000355610, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.36
+      value: -5.853298
       objectReference: {fileID: 0}
     - target: {fileID: 4567849000355610, guid: b8c2339b66f0e734287ea5426c618bf5, type: 3}
       propertyPath: m_LocalRotation.w
